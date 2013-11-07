@@ -1,0 +1,24 @@
+<h1>Editing blog</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Show', @blog %> |
+<%= link_to 'Back', blogs_path %>
+
+<div>
+	<h3> Add a tag </h3>
+	<%= render 'tags/form' %>
+</div>
+
+</br>
+
+<div>
+
+	Tags:
+	<% @blog.tags.each do |tag| %>
+	<span style="background-color:black;padding:6px;margin:4px;color:white"><%= tag.tag %></span>
+
+	<%= link_to 'x', tag, method: :delete, data: { confirm: 'Are you sure?' } %>
+	<% end %>
+
+</div>
